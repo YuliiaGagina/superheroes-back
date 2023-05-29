@@ -4,13 +4,11 @@ const { Superhero } = require("../../model");
 const { NotFound } = require("http-errors");
 
 const addAvatar = async (req, res) => {
-  // const { path: tempUpload, originalname } = req.file;
   const { id } = req.params;
   const { images } = req.body;
   const files = req.files;
   const fileNames = files.map((file) => file.originalname);
 
-  // const imageName = `${id}_${originalname}`;
   try {
     const uploadPromises = files.map((file) => {
       const imageName = `${file.originalname}`;
