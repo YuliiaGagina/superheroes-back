@@ -26,13 +26,7 @@ const updateSuperhero = async (req, res) => {
     const images = fileNames.map((fileName) =>
       path.join("public", "avatars", `${fileName}`)
     );
-    // const updatedFields = {
-    //   nickname,
-    //   real_name,
-    //   origin_description,
-    //   superpowers,
-    //   catch_phrase,
-    // };
+   
     const newSuperhero = await Superhero.findByIdAndUpdate(
       id,
       { ...req.body, images: images },

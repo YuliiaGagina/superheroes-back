@@ -28,15 +28,7 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
-
-// const authRouter = require("./routes/api/auth");
-// const usersRouter = require("./routes/api/users");
 const superheroesRouter = require("./routes/api/superheroes");
-
-// app.use("/api/auth", authRouter);
-// app.use("/api/users", usersRouter);
 
 app.use("/api/superheroes", superheroesRouter);
 
